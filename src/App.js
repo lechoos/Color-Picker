@@ -29,47 +29,48 @@ const App = () => {
   }, [red, green, blue, color])
 
   return(
-    <form className="modal">
-      <p onClick={() => {setHex(!hex)}} className='output'>
-        {hex 
-          ? `#${convertToHex(red)}${convertToHex(green)}${convertToHex(blue)}`
-          : `rgb(${red}, ${green}, ${blue})`
-        }
-      </p>
-      <div className="inputs">
-        <ColorInput 
-          value={red}
-          setValue={setRed}
-          trackColor={'#c03939'}
-          innerThumb={'#f57777'}
-          outerThumb={'#882626'}
-          id={'red'}
-        />
-        <ColorInput 
-          value={green}
-          setValue={setGreen}
-          trackColor={'#54c039'}
-          innerThumb={'#90f577'}
-          outerThumb={'#368826'}
-          id={'green'}
-        />
-        <ColorInput 
-          value={blue}
-          setValue={setBlue}
-          trackColor={'#3942c0'}
-          innerThumb={'#8477f5'}
-          outerThumb={'#282688'}
-          id={'blue'}
-        />
-        <button className="color-btn"></button>
-      </div>
-      <button onClick={(e) => {
-        e.preventDefault();
-        [setRed, setGreen, setBlue].forEach(x => {
-          randomColor(x);
-        })
-      }} className="color-btn">Losowy</button>
-    </form>
+    <div className="modal">
+      <form className="modal-items">
+        <p onClick={() => {setHex(!hex)}} className='output'>
+          {hex 
+            ? `#${convertToHex(red)}${convertToHex(green)}${convertToHex(blue)}`
+            : `rgb(${red}, ${green}, ${blue})`
+          }
+        </p>
+        <div className="inputs">
+          <ColorInput 
+            value={red}
+            setValue={setRed}
+            trackColor={'#c03939'}
+            innerThumb={'#f57777'}
+            outerThumb={'#882626'}
+            id={'red'}
+          />
+          <ColorInput 
+            value={green}
+            setValue={setGreen}
+            trackColor={'#54c039'}
+            innerThumb={'#90f577'}
+            outerThumb={'#368826'}
+            id={'green'}
+          />
+          <ColorInput 
+            value={blue}
+            setValue={setBlue}
+            trackColor={'#3942c0'}
+            innerThumb={'#8477f5'}
+            outerThumb={'#282688'}
+            id={'blue'}
+          />
+        </div>
+        <button onClick={(e) => {
+          e.preventDefault();
+          [setRed, setGreen, setBlue].forEach(x => {
+            randomColor(x);
+          })
+        }} className="color-btn">Losowy</button>
+      </form>
+    </div>
   )
 }
 

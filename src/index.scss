@@ -21,20 +21,29 @@ body {
   height: 100vh;
   font-family: sans-serif;
   background-color: var(--bg-color);
-  transition: all 0.3s;
+  transition: background-color 0.3s;
+}
+
+#root {
+  padding-inline: 2em;
+  width: 100%;
 }
 
 .modal {
+  padding: 20px;
+  height: 400px;
+  background-color: #00000089;
+  border: 1px solid #ffffff6b;
+  border-radius: 16px;
+}
+
+.modal-items {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  width: 400px;
-  aspect-ratio: 1;
-  background-color: #00000089;
-  border: 1px solid #ffffff6b;
-  border-radius: 16px;
+  width: 100%;
+  height: 100%;
 }
 
 .output {
@@ -58,7 +67,7 @@ body {
 
   .color-btn {
     position: relative;
-    top: 1em;
+    // top: 1em;
   }
 }
 
@@ -76,9 +85,33 @@ input {
   border: 2px solid #fff;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.1s;
+  transition: background-color 0.1s;
 }
 
 .color-btn:hover {
   background-color: #ffffff33;
+}
+
+@media (min-width: 576px) {
+  #root {
+    padding-inline: 13em;
+  }
+}
+
+@media (min-width: 768px) {
+  #root {
+    padding-inline: 20em;
+  }
+}
+
+@media (min-width: 992px) {
+  #root {
+    padding-inline: 30em;
+  }
+}
+
+@media (min-width: 1200px) {
+  #root {
+    padding-inline: 40em;
+  }
 }

@@ -1,15 +1,13 @@
 @forward './Sass/input';
 
-:root {
-  --bg-color: #333;
-}
-
-$bgColor: --bg-color;
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --bg-color: #333;
 }
 
 html {
@@ -22,7 +20,7 @@ body {
   align-items: center;
   height: 100vh;
   font-family: sans-serif;
-  background-color: $bgColor;
+  background-color: var(--bg-color);
   transition: background-color 0.3s;
 }
 

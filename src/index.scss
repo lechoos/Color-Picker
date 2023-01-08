@@ -1,13 +1,15 @@
 @forward './Sass/input';
 
+:root {
+  --bg-color: #333;
+}
+
+$bgColor: --bg-color;
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-:root {
-  --bg-color: #333;
 }
 
 html {
@@ -20,7 +22,7 @@ body {
   align-items: center;
   height: 100vh;
   font-family: sans-serif;
-  background-color: var(--bg-color);
+  background-color: $bgColor;
   transition: background-color 0.3s;
 }
 
@@ -64,11 +66,6 @@ body {
   align-items: center;
   margin-top: -3.5em;
   width: 100%;
-
-  .color-btn {
-    position: relative;
-    // top: 1em;
-  }
 }
 
 input {
@@ -86,10 +83,10 @@ input {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.1s;
-}
 
-.color-btn:hover {
-  background-color: #ffffff33;
+  &:hover {
+    background-color: #ffffff33;
+  }
 }
 
 @media (min-width: 576px) {
